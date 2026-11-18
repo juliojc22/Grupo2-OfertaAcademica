@@ -11,7 +11,20 @@ namespace Grupo2OfertaAcademica
             builder.Services.AddDbContext<Grupo2OfertaAcademicaContext>(options => options.UseSqlServer(connectionString));
 
             // Add services to the container.
-            builder.Services.AddControllersWithViews();
+            builder.Services.AddControllersWithViews(options =>
+            {
+                options.ModelBindingMessageProvider
+                    .SetValueMustNotBeNullAccessor(
+                        _ => "Este campo es obligatorio.");
+
+                options.ModelBindingMessageProvider
+                    .SetValueMustBeANumberAccessor(
+                        campo => $"El campo {campo} debe ser un número.");
+
+                options.ModelBindingMessageProvider
+                    .SetAttemptedValueIsInvalidAccessor(
+                        (valor, campo) => $"El valor '{valor}' no es válido para {campo}.");
+            });
 
             var app = builder.Build();
 
