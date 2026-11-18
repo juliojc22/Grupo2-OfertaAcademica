@@ -1,3 +1,4 @@
+using Microsoft.EntityFrameworkCore;
 namespace Grupo2OfertaAcademica
 {
     public class Program
@@ -5,6 +6,9 @@ namespace Grupo2OfertaAcademica
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+            var connectionString = builder.Configuration.GetConnectionString("Grupo2OfertaAcademicaContext") ?? throw new InvalidOperationException("Connection string 'Grupo2OfertaAcademicaContext' not found.");
+
+            builder.Services.AddDbContext<Grupo2OfertaAcademicaContext>(options => options.UseSqlServer(connectionString));
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
