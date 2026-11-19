@@ -24,8 +24,5 @@ Una universidad necesita publicar su oferta académica.
 | **Julio Emerson Coro Pineida**   | 100% |
 
 
-## Fases asignadas
-(Pendiente de completar)
-
-## Ejecución del proyecto
-(Se completará durante el desarrollo)
+## Fases y Ejecución del proyecto
+| **Julio Emerson Coro Pineida**   | 100% |
