@@ -10,6 +10,9 @@
         <li class="nav-item">
             <span class="nav-link text-dark">
                 Hola, @User.Identity?.Name
+                (@(User.IsInRole("Coordinador") ? "Coordinador" :
+                   User.IsInRole("Aspirante") ? "Aspirante" :
+                   "Sin rol asignado"))
             </span>
         </li>
 

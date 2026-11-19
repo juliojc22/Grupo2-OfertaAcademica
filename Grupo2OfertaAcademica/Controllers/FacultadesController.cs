@@ -3,7 +3,10 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Grupo2OfertaAcademica.Models;
 using Grupo2OfertaAcademica.Data;
+using Microsoft.AspNetCore.Authorization;
 
+
+[Authorize(Roles = "Coordinador")]
 public class FacultadesController : Controller
 {
     private readonly Grupo2OfertaAcademicaContext _context;
@@ -14,12 +17,14 @@ public class FacultadesController : Controller
     }
 
     // GET: FACULTADS
+    [AllowAnonymous]
     public async Task<IActionResult> Index()    
     {
         return View(await _context.Facultad.ToListAsync());
     }
 
     // GET: FACULTADS/Details/5
+    [AllowAnonymous]
     public async Task<IActionResult> Details(int? id)
     {
         if (id == null)
