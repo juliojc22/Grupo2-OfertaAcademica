@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Grupo2OfertaAcademica.Migrations
 {
-    [DbContext(typeof(Grupo2OfertaAcademicaContext))]
+    [DbContext(typeof(global::Grupo2OfertaAcademica.Data.Grupo2OfertaAcademicaContext))]
     [Migration("20261118205136_InitialCreate")]
     partial class InitialCreate
     {

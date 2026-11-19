@@ -1,7 +1,9 @@
 
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using Grupo2OfertaAcademica.Models;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
+using Grupo2OfertaAcademica.Data;
 
 public class CarrerasController : Controller
 {
@@ -39,6 +41,9 @@ public class CarrerasController : Controller
     // GET: CARRERAS/Create
     public IActionResult Create()
     {
+        ViewData["FacultadId"] = new SelectList(
+            _context.Facultad, "Id", "Nombre");
+
         return View();
     }
 
@@ -47,7 +52,7 @@ public class CarrerasController : Controller
     // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Create([Bind("Id,Nombre,Codigo,DuracionSemestres")] Carrera carrera)
+    public async Task<IActionResult> Create([Bind("Id,Nombre,Codigo,DuracionSemestres,FacultadId")] Carrera carrera)
     {
         if (ModelState.IsValid)
         {
@@ -55,6 +60,9 @@ public class CarrerasController : Controller
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
+
+        ViewData["FacultadId"] = new SelectList( _context.Facultad, "Id", "Nombre", carrera.FacultadId);
+
         return View(carrera);
     }
 

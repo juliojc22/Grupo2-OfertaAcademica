@@ -1,6 +1,20 @@
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using Grupo2OfertaAcademica.Models;
 
-public class Grupo2OfertaAcademicaContext(DbContextOptions<Grupo2OfertaAcademicaContext> options) : DbContext(options)
+namespace Grupo2OfertaAcademica.Data
 {
-    public DbSet<Grupo2OfertaAcademica.Models.Carrera> Carrera { get; set; } = default!;
+    public class Grupo2OfertaAcademicaContext
+        : IdentityDbContext<ApplicationUser>
+    {
+        public Grupo2OfertaAcademicaContext(
+            DbContextOptions<Grupo2OfertaAcademicaContext> options)
+            : base(options)
+        {
+        }
+
+        public DbSet<Carrera> Carrera { get; set; } = default!;
+
+        public DbSet<Facultad> Facultad { get; set; } = default!;
+    }
 }

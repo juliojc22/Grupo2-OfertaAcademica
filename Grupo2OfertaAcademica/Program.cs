@@ -1,4 +1,9 @@
+using Grupo2OfertaAcademica.Models;
+using Grupo2OfertaAcademica.Data;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+
+
 namespace Grupo2OfertaAcademica
 {
     public class Program
@@ -8,7 +13,9 @@ namespace Grupo2OfertaAcademica
             var builder = WebApplication.CreateBuilder(args);
             var connectionString = builder.Configuration.GetConnectionString("Grupo2OfertaAcademicaContext") ?? throw new InvalidOperationException("Connection string 'Grupo2OfertaAcademicaContext' not found.");
 
-            builder.Services.AddDbContext<Grupo2OfertaAcademicaContext>(options => options.UseSqlServer(connectionString));
+            builder.Services.AddDbContext<Grupo2OfertaAcademicaContext>( options => options.UseSqlServer(builder.Configuration.GetConnectionString("Grupo2OfertaAcademicaContext")));
+
+            builder.Services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = false).AddEntityFrameworkStores<Grupo2OfertaAcademicaContext>();
 
             // Add services to the container.
             builder.Services.AddControllersWithViews(options =>
@@ -38,7 +45,7 @@ namespace Grupo2OfertaAcademica
 
             app.UseHttpsRedirection();
             app.UseRouting();
-
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.MapStaticAssets();
@@ -46,7 +53,7 @@ namespace Grupo2OfertaAcademica
                 name: "default",
                 pattern: "{controller=Home}/{action=Index}/{id?}")
                 .WithStaticAssets();
-
+            app.MapRazorPages();
             app.Run();
         }
     }

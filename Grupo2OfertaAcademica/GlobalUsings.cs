@@ -1,0 +1,1 @@
+﻿global using Grupo2OfertaAcademica.Models;

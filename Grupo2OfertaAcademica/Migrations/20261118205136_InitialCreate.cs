@@ -1,5 +1,8 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
-
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
+using Grupo2OfertaAcademica.Data;
 #nullable disable
 
 namespace Grupo2OfertaAcademica.Migrations
