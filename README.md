@@ -25,4 +25,6 @@ Una universidad necesita publicar su oferta académica.
 
 
 ## Fases y Ejecución del proyecto
+| Integrante  | Ejecución |
+| :--- | :--- |
 | **Julio Emerson Coro Pineida**   | 100% |
