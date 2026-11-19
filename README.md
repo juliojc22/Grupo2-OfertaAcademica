@@ -10,6 +10,7 @@ Una universidad necesita publicar su oferta académica.
 ## Roles
 - Coordinador: gestión
 - Aspirante: consulta
+- Visitante: consulta
 
 ## Tecnologías
 - ASP.NET Core MVC
