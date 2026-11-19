@@ -10,6 +10,7 @@ Una universidad necesita publicar su oferta académica.
 ## Roles
 - Coordinador: gestión
 - Aspirante: consulta
+- Visitante: consulta
 
 ## Tecnologías
 - ASP.NET Core MVC
@@ -19,10 +20,12 @@ Una universidad necesita publicar su oferta académica.
 - ASP.NET Core Identity
 
 ## Integrantes y turnos
-(Pendiente de completar con nombres reales)
+| Integrante  | Participación |
+| :--- | :--- |
+| **Julio Emerson Coro Pineida**   | 100% |
 
-## Fases asignadas
-(Pendiente de completar)
 
-## Ejecución del proyecto
-(Se completará durante el desarrollo)
+## Fases y Ejecución del proyecto
+| Integrante  | Ejecución |
+| :--- | :--- |
+| **Julio Emerson Coro Pineida**   | 100% |
