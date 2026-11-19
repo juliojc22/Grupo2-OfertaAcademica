@@ -19,7 +19,10 @@ Una universidad necesita publicar su oferta académica.
 - ASP.NET Core Identity
 
 ## Integrantes y turnos
-(Pendiente de completar con nombres reales)
+| Integrante  | Participación |
+| :--- | :--- |
+| **Julio Emerson Coro Pineida**   | 100% |
+
 
 ## Fases asignadas
 (Pendiente de completar)
